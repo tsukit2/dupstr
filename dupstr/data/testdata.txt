@@ -1,0 +1,21 @@
+Microsoft Dynamics enables confident decision-making
+
+Business needs change. To initiate and respond to these changes, you need an integrated business management solution that provides a comprehensive, real-time view of critical information. Microsoft Dynamics provides the information you need, allowing you to effectively address the evolving demands of your business. Here are some of the ways Microsoft Dynamics can help you make informed decisions that you feel confident about and help your business thrive.
+
+Empower your people to do their jobs 
+- Give your people the information they need to do their jobs. RoleTailored information empowers your staff to quickly access the specific information they need perform their daily duties and to make changes that affect the broader organization.
+- Reduce the learning curve. Microsoft Dynamics integrates with familiar software, such as Microsoft Office Word and Microsoft Office Excel. This enables your staff to build on the skills they already have.
+
+Gain business insight with access to relevant, mission-critical information
+- Align with business goals. Key performance indicators (KPIs) help you analyze specific projects and tasks against the high-level business goal. When you're off course, business alerts help you stay on track. 
+- Increase reporting capabilities. By integrating with Microsoft SQL Server you gain optimal access to business intelligence information. Here are some of the ways you can generate reports with SQL Server Reporting Services, build and analyze data warehouses, and organize and use data efficiently.
+- Align with business goals. Key performance indicators help you analyze specific projects against the high-level business goal. When you are off course, business alerts help you stay on track. 
+- Control access to sensitive information. Managers grant permissions to help ensure that specific information is available only to those who need it. 
+- Enhance decision-making. By gaining business critical insight across the organization, you can access and analyze the business critical information to help you make informed decisions and affect change quickly. 
+
+Comply with regulations
+Implement consistent, structured processes. Microsoft Dynamics can help you put these processes in place. This helps to guarantee accountability and reliability throughout your organization. This enables your staff to build on the skills they already have.
+
+Help ensure the integrity of your processes. Microsoft Dynamics can help ensure the integrity of your information and communications, and keep the right stakeholders informed--all in a timely manner.
+
+Increase reporting capabilities. By integrating with Microsoft SQL Server you gain optimal access to business intelligence information. You can generate reports with SQL Server Reporting Services, build and analyze data warehouses, and organize and use data efficiently.

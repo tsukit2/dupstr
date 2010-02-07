@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>dupstr 0.1 - ${filename}</title>
+<script>
+var originalText = "${originalText}";
+var offsets = ${offsets};
+
+function insertStr(text, pos, insertedText) {
+   var before = text.substring(0, pos);
+   var after = text.substring(pos, text.length);
+   return before + insertedText + after;
+}
+
+function displayDupStr() {
+   // add span tags to the original text
+   var newtext = originalText;
+   var selectedIndex = document.getElementById("dupstrs").selectedIndex
+   var ranges = offsets[selectedIndex];
+   var offset = 0;
+   var begintag = '<span class="dupstr">';
+   var endtag = '</span>';
+   for(var index = 0; index < ranges.length; ++index) {
+      // insert begin tag
+      newtext = insertStr(newtext, ranges[index][0] + offset, begintag);
+      offset += begintag.length;
+      newtext = insertStr(newtext, ranges[index][1] + offset + 1, endtag);
+      offset += endtag.length;
+   }
+      
+   // finally update the display
+   document.getElementById("displayStr").innerHTML = document.getElementById("dupstrs").options[selectedIndex].text; 
+   document.getElementById("originalText").innerHTML = newtext;   
+}
+</script>
+<style>
+span.dupstr { color:red; font-weight:bold }
+</style>
+</head>
+<body onload="displayDupStr()">
+<h1>Duplicate strings found in ${filename}</h1>
+
+<div>
+   <h3>Duplicate Strings</h3> 
+	<select id="dupstrs" onchange="displayDupStr()" style="max-width:50em">
+	   <% dupstrs.each { %>
+	      <option>${it}</option>
+	   <% } %>
+	</select>
+</div>
+
+<div>
+   <h3>The Tokens</h3>
+   <div id="displayStr" style="font-family:monospace; border: dotted red thin; padding:10px; max-width:60em"></div>
+</div>
+
+<div>
+   <h3>Original Text</h3>
+   <div id="originalText" style="font-family:monospace; max-width:60em"></div>
+</div>
+
+</body>
+</html>
