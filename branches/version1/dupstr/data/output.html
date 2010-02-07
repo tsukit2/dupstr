@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>dupstr 0.1 - data/testdata.txt</title>
+<script>
+var originalText = "Microsoft Dynamics enables confident decision-making<br/><br/>Business needs change. To initiate and respond to these changes, you need an integrated business management solution that provides a comprehensive, real-time view of critical information. Microsoft Dynamics provides the information you need, allowing you to effectively address the evolving demands of your business. Here are some of the ways Microsoft Dynamics can help you make informed decisions that you feel confident about and help your business thrive.<br/><br/>Empower your people to do their jobs <br/>- Give your people the information they need to do their jobs. RoleTailored information empowers your staff to quickly access the specific information they need perform their daily duties and to make changes that affect the broader organization.<br/>- Reduce the learning curve. Microsoft Dynamics integrates with familiar software, such as Microsoft Office Word and Microsoft Office Excel. This enables your staff to build on the skills they already have.<br/><br/>Gain business insight with access to relevant, mission-critical information<br/>- Align with business goals. Key performance indicators (KPIs) help you analyze specific projects and tasks against the high-level business goal. When you're off course, business alerts help you stay on track. <br/>- Increase reporting capabilities. By integrating with Microsoft SQL Server you gain optimal access to business intelligence information. Here are some of the ways you can generate reports with SQL Server Reporting Services, build and analyze data warehouses, and organize and use data efficiently.<br/>- Align with business goals. Key performance indicators help you analyze specific projects against the high-level business goal. When you are off course, business alerts help you stay on track. <br/>- Control access to sensitive information. Managers grant permissions to help ensure that specific information is available only to those who need it. <br/>- Enhance decision-making. By gaining business critical insight across the organization, you can access and analyze the business critical information to help you make informed decisions and affect change quickly. <br/><br/>Comply with regulations<br/>Implement consistent, structured processes. Microsoft Dynamics can help you put these processes in place. This helps to guarantee accountability and reliability throughout your organization. This enables your staff to build on the skills they already have.<br/><br/>Help ensure the integrity of your processes. Microsoft Dynamics can help ensure the integrity of your information and communications, and keep the right stakeholders informed--all in a timely manner.<br/><br/>Increase reporting capabilities. By integrating with Microsoft SQL Server you gain optimal access to business intelligence information. You can generate reports with SQL Server Reporting Services, build and analyze data warehouses, and organize and use data efficiently.<br/>";
+var offsets = [[[1336, 1470], [2718, 2852]], [[1498, 1631], [2854, 2987]], [[962, 1028], [2432, 2498]], [[1119, 1173], [1637, 1691]], [[1277, 1334], [1779, 1836]], [[1227, 1268], [1728, 1769]], [[2276, 2313], [2543, 2580]], [[1182, 1215], [1693, 1726]], [[428, 459], [2145, 2176]], [[2509, 2541], [2577, 2609]], [[405, 435], [2287, 2317]], [[377, 403], [1470, 1496]]];
+var prevItem;
+
+function insertStr(text, pos, insertedText) {
+   var before = text.substring(0, pos);
+   var after = text.substring(pos, text.length);
+   return before + insertedText + after;
+}
+
+function displayDupStr(selectedIndex) {
+   // add span tags to the original text
+   var newtext = originalText;
+   var ranges = offsets[selectedIndex];
+   var offset = 0;
+   var begintag = '<span class="dupstr">';
+   var endtag = '</span>';
+   for(var index = 0; index < ranges.length; ++index) {
+      // insert begin tag
+      newtext = insertStr(newtext, ranges[index][0] + offset, begintag);
+      offset += begintag.length;
+      newtext = insertStr(newtext, ranges[index][1] + offset + 1, endtag);
+      offset += endtag.length;
+   }
+      
+   // finally update the display
+   if(prevItem) {
+      document.getElementById(prevItem).style.backgroundColor = '';
+   }
+   document.getElementById(prevItem = ('item' + selectedIndex)).style.backgroundColor = 'GreenYellow';
+   document.getElementById("originalText").innerHTML = newtext;   
+}
+</script>
+<style>
+body { font-family: tahoma; font-size: small }
+A:link {text-decoration: none}
+A:visited {text-decoration: none}
+A:hover {color: red}
+span.dupstr { color:red }
+</style>
+</head>
+<body>
+<h1>Duplicate strings found in data/testdata.txt</h1>
+
+<table>
+   <tr>
+      <td style="width:30%; vertical-align:top" >
+         <h3>Duplicate Strings</h3> 
+         <div style="max-height: 35em; overflow:scroll;">
+	         
+	            <div id="item0" style="padding:5px" > 
+	              <a href="javascript:displayDupStr(0)">Increase reporting capabilities . By integrating with Microsoft SQL Server you gain optimal access to business intelligence information .</a>
+	            </div>
+	         
+	            <div id="item1" style="padding:5px" > 
+	              <a href="javascript:displayDupStr(1)">you can generate reports with SQL Server Reporting Services , build and analyze data warehouses , and organize and use data efficiently .</a>
+	            </div>
+	         
+	            <div id="item2" style="padding:5px" > 
+	              <a href="javascript:displayDupStr(2)">. This enables your staff to build on the skills they already have .</a>
+	            </div>
+	         
+	            <div id="item3" style="padding:5px" > 
+	              <a href="javascript:displayDupStr(3)">- Align with business goals . Key performance indicators</a>
+	            </div>
+	         
+	            <div id="item4" style="padding:5px" > 
+	              <a href="javascript:displayDupStr(4)">off course , business alerts help you stay on track . -</a>
+	            </div>
+	         
+	            <div id="item5" style="padding:5px" > 
+	              <a href="javascript:displayDupStr(5)">against the high-level business goal . When</a>
+	            </div>
+	         
+	            <div id="item6" style="padding:5px" > 
+	              <a href="javascript:displayDupStr(6)">processes . Microsoft Dynamics can help</a>
+	            </div>
+	         
+	            <div id="item7" style="padding:5px" > 
+	              <a href="javascript:displayDupStr(7)">help you analyze specific projects</a>
+	            </div>
+	         
+	            <div id="item8" style="padding:5px" > 
+	              <a href="javascript:displayDupStr(8)">help you make informed decisions</a>
+	            </div>
+	         
+	            <div id="item9" style="padding:5px" > 
+	              <a href="javascript:displayDupStr(9)">help ensure the integrity of your</a>
+	            </div>
+	         
+	            <div id="item10" style="padding:5px" > 
+	              <a href="javascript:displayDupStr(10)">Microsoft Dynamics can help you</a>
+	            </div>
+	         
+	            <div id="item11" style="padding:5px" > 
+	              <a href="javascript:displayDupStr(11)">. Here are some of the ways</a>
+	            </div>
+	         
+         </div>
+      </td>
+      <td style="width:70%; vertical-align:top" >
+         <h3>Original Text</h3> 
+         <div id="originalText" style="max-height:35em; overflow:scroll; max-width:60em">Microsoft Dynamics enables confident decision-making<br/><br/>Business needs change. To initiate and respond to these changes, you need an integrated business management solution that provides a comprehensive, real-time view of critical information. Microsoft Dynamics provides the information you need, allowing you to effectively address the evolving demands of your business. Here are some of the ways Microsoft Dynamics can help you make informed decisions that you feel confident about and help your business thrive.<br/><br/>Empower your people to do their jobs <br/>- Give your people the information they need to do their jobs. RoleTailored information empowers your staff to quickly access the specific information they need perform their daily duties and to make changes that affect the broader organization.<br/>- Reduce the learning curve. Microsoft Dynamics integrates with familiar software, such as Microsoft Office Word and Microsoft Office Excel. This enables your staff to build on the skills they already have.<br/><br/>Gain business insight with access to relevant, mission-critical information<br/>- Align with business goals. Key performance indicators (KPIs) help you analyze specific projects and tasks against the high-level business goal. When you're off course, business alerts help you stay on track. <br/>- Increase reporting capabilities. By integrating with Microsoft SQL Server you gain optimal access to business intelligence information. Here are some of the ways you can generate reports with SQL Server Reporting Services, build and analyze data warehouses, and organize and use data efficiently.<br/>- Align with business goals. Key performance indicators help you analyze specific projects against the high-level business goal. When you are off course, business alerts help you stay on track. <br/>- Control access to sensitive information. Managers grant permissions to help ensure that specific information is available only to those who need it. <br/>- Enhance decision-making. By gaining business critical insight across the organization, you can access and analyze the business critical information to help you make informed decisions and affect change quickly. <br/><br/>Comply with regulations<br/>Implement consistent, structured processes. Microsoft Dynamics can help you put these processes in place. This helps to guarantee accountability and reliability throughout your organization. This enables your staff to build on the skills they already have.<br/><br/>Help ensure the integrity of your processes. Microsoft Dynamics can help ensure the integrity of your information and communications, and keep the right stakeholders informed--all in a timely manner.<br/><br/>Increase reporting capabilities. By integrating with Microsoft SQL Server you gain optimal access to business intelligence information. You can generate reports with SQL Server Reporting Services, build and analyze data warehouses, and organize and use data efficiently.<br/></div>
+      </td>
+   </tr>
+</table>
+
+</body>
+</html>
